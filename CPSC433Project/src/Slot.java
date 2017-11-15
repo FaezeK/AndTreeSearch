@@ -1,10 +1,12 @@
+package andTreeSearch;
 
 public class Slot {
-	private String type;
-	private String day;
-	private String time;
-	private int max;
-	private int min;
+	
+	String type;
+	String day;
+	String time;
+	int max;
+	int min;
 	
 	public Slot(String line, String type) {
 		line = line.replaceAll(" +", "");		//Remove erroneous whitespace
@@ -15,10 +17,21 @@ public class Slot {
 		this.max = Integer.parseInt(parts[2]);
 		this.min = Integer.parseInt(parts[3]);
 	}
-	
-	public String toString() {
-		return day + ", " + time + ", " + Integer.toString(max) + ", " + Integer.toString(min);
+
+	public String getType(){
+		return type;
 	}
-	
-	//TODO Getters
+	public String getDay(){
+		return day;
+	}
+	public String getTime(){
+		return time;
+	}
+	public int getMin(){
+		return min;
+	}
+	public int getMax(){
+		return max;
+	}
+
 }
