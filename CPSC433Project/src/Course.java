@@ -1,9 +1,9 @@
 
 public class Course {
-	private String department;
-	private int courseNum;
-	private String lecture;
-	private String tutorial;
+private String department;
+private int courseNum;
+private String lecture;
+private String tutorial;
 	
 	public Course(String line) {
 		line = line.trim().replaceAll(" +", " ");
@@ -19,6 +19,25 @@ public class Course {
 			this.tutorial = parts[2]+" "+parts[3];
 		}
 	}
+	
+	public String toString() {
+		String name = department + " " + Integer.toString(courseNum);
+		if (lecture != null) { name = name + " " + lecture; }
+		if (tutorial != null) { name = name + " " + tutorial; }
+		return name;
+	}
+	
+//	public int hashCode() {
+//	return department.hashCode()+lecture.hashCode()+tutorial.hashCode()+courseNum;
+//	}
+	
+//	public boolean equals(Course c) {
+//		return ((this.department == null ? c.department == null : this.department.equals(c.department)) && 
+//				(this.lecture == null ? c.lecture == null : this.lecture.equals(c.lecture)) && 
+//				(this.tutorial == null ? c.tutorial == null : this.tutorial.equals(c.tutorial)) && 
+//				this.courseNum == c.courseNum);
+//		return this.toString().equals(c.toString());
+//	}
 	
 	//TODO Getters
 }

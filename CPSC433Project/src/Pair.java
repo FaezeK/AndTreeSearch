@@ -15,4 +15,8 @@ public class Pair<X,Y> {
 	public Y getright() {
 		return right;
 	}
+	
+	public String toString() {
+		return "<" + left.toString() + "," + right.toString() + ">";
+	}
 }

@@ -57,8 +57,9 @@ public class Input {
 						System.out.println(section+line);
 						break;
 					case "Preferences:":
+						//TODO Preferences with invalid slots can be ignored, can invalid classes be handled the same way?
 						parts = line.split(",");
-						preferences.add(new Pair<Pair<String, Course>, Integer>(new Pair<String, Course>(parts[0]+", "+parts[1], new Course(parts[2])), Integer.parseInt(parts[3].trim())));
+						preferences.add(new Pair<Pair<String, Course>, Integer>(new Pair<String, Course>(parts[0]+", "+parts[1].trim(), new Course(parts[2])), Integer.parseInt(parts[3].trim())));
 						System.out.println(section+line);
 						break;
 					case "Pair:":
@@ -67,8 +68,19 @@ public class Input {
 						System.out.println(section+line);
 						break;
 					case "Partial assignments:":
-						//TODO Record these somehow for later use in s0 creation
+						//TODO Partial assignments that are invalid result in an error message and exit.
 						parts = line.split(",", 2);
+						
+//						Course temp = new Course(parts[0]);
+//						System.out.print(temp.equals(courses.get(2)));
+//						courses.add(temp);
+//						System.out.print(courses.indexOf(temp));
+//						System.out.println((temp==null ? courses.get(2)==null : temp.equals(courses.get(2))));
+//						System.out.println(courses.contains(temp));
+//						System.out.print(courses.indexOf(temp));
+//						System.out.println(temp);
+//						System.out.println(courses.get(2));
+						
 						partialAssignments.add(new Pair<Course, String>(new Course(parts[0]), parts[1])); //TODO setup the correct slot instead of string
 						System.out.println(section+line);
 						break;

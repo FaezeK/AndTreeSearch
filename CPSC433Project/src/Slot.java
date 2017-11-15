@@ -16,5 +16,9 @@ public class Slot {
 		this.min = Integer.parseInt(parts[3]);
 	}
 	
+	public String toString() {
+		return day + ", " + time + ", " + Integer.toString(max) + ", " + Integer.toString(min);
+	}
+	
 	//TODO Getters
 }
